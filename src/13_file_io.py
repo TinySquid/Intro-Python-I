@@ -9,7 +9,14 @@ https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 # Print all the contents of the file, then close the file
 # Note: pay close attention to your current directory when trying to open "foo.txt"
 
+# import os
+
+# print(os.getcwd())
+
 # YOUR CODE HERE
+with open("src/foo.txt", "r") as f:
+    text = f.read()
+    print(text)
 
 # Open up a file called "bar.txt" (which doesn't exist yet) for
 # writing. Write three lines of arbitrary content to that file,
@@ -17,3 +24,11 @@ https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 # sure that it contains what you expect it to contain
 
 # YOUR CODE HERE
+with open("src/bar.txt", "w") as f:
+    f.write("Some line\nanother line\nand another line")
+
+# Another way of opening/closing a file...
+f = open("src/bar.txt", "r")
+text = f.read()
+print(text)
+f.close()
